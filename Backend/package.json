@@ -1,0 +1,22 @@
+{
+  "name": "SRAT",
+  "version": "1.0.0",
+  "description": "Spotify Refresh Access Token",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Das MA",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "spotify-web-api-node": "^4.0.0",
+    "sqlite3": "^4.0.4"
+  }
+}
