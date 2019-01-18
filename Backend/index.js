@@ -16,7 +16,7 @@ server.use(cors());
 
 
 // The code that's returned as a query parameter to the redirect URI
-let code = 'AQBjM-kilu-lY5dxP29UHQWklMuzN2e719-iWJJOm3SjA-lG8laWJo6DlSCTEqLXzD_uv7h6V-EMUMDL2rVxrqdE0H9LHI_XnXE8gm7IaEuOERMwmEoq1Z8F1H9A5uqSOmD-UCkaetr04AXMyoYxei-LK_6WCvg-x4nnSUiFiHDfON7zKeitkjzrOowvY2WCT1ALDOKOxPYKNdn_dWkpKf4J2YpJT-_vC9pOIaoLGdtsFL2O6eRvPDCx';
+let code = 'AQD9skDF0GKS20zDMqPN40Urckn6CfbkD06dL7GgDI9ZuzCzBhgppjrdxxXcvu4x3_EghSMMTuQh7P_ZpR0KtTzKUIEV-XotUj_d5XAHSGZOXbhy26rEE4OFX8i053mEZNYFYMLXq0Bv6cjpFioApRulaUt6Ee7VqN_2EMWdmtgJ8EFpPxAN3teAdGV-6GgsrNqpYS7u6RKFyaLLOviWdTuk-DHbOY1nUgbCTNM34rwUP8ZpQs0NdTOm';
 
 // Retrieve an access token and a refresh token
 spotifyApi.authorizationCodeGrant(code).then(
