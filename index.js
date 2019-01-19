@@ -23,7 +23,7 @@ let spotifyApi = new SpotifyWebApi({
 
 
 // The code that's returned as a query parameter to the redirect URI
-let code = 'AQCfz1Etj9gH9ees3T1gyeh8Srn0eQlphHl85i0wKHtkEHjN1Wp25i2qfKKSOHjvToySwdeME5AAvj4mPX5atUmyDcJ3VQTmZZFGYN4HexPZFJtKuRk3Gyug5X8WPLDuRhqvrgcy9AhLQoHuHhaiqqCOo4GxS70JnB7QJ-xlX2wiauGamOi0IbcCJ3d7IFbPlCR4vv7HM8iGL6Kyt2Y5ODSI56Yagv8Aj3nrKsRuvmrFLW8ZaVB_qgwgPuareZIIFBG_dEOq6ShCnQfy8yw';
+let code = 'AQBhTOTrWYSM8xZ1Ymdx2V9HIO7tEWEMBs5YmEGiiM8oDjlG-UVeokaeWu1fgh9OqwPjXdzsFS_p5tEmSlmq1VvLLHd0HVWeWOKBJ41I8RxlSxzqcgu_dvy0dF8AMkxBxFIKkD1aaIc6ouRvmFur9i49LGrihpwVAcjUJcPLmgRrZZ1QyXq83Gbs5rhq7SZvFR0cL8zCfJc7-kO_NHEEoAZ39SWgT72M1GCVsTQmhoSU-E2GFkQShcxixzbtmFV52QjWUrekfwd2dBtOFq4';
 
 // Retrieve an access token and a refresh token
 spotifyApi.authorizationCodeGrant(code).then(
@@ -67,9 +67,10 @@ setInterval(timer, 3590000);
 // ############################################################ //
 // keeping heroku awake by sending a request to app every 29 minutes
 
-let http = require("http");
+let https = require("https");
 function ping() {
-    http.get("https://testing-spotify-api.herokuapp.com/");
+    https.get("https://testing-spotify-api.herokuapp.com/");
+    console.log('Ping is sent.');
 };
 
 setInterval(ping, 1740000); // every 29 minutes
