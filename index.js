@@ -2,6 +2,8 @@
 const express = require('express');
 const cors = require('cors');
 const SpotifyWebApi = require('spotify-web-api-node');
+const path = require('path');
+
 
 const server = express();
 
