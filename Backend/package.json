@@ -1,5 +1,5 @@
 {
-  "name": "SRAT",
+  "name": "backend",
   "version": "1.0.0",
   "description": "Spotify Refresh Access Token",
   "main": "index.js",
