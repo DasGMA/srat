@@ -13,7 +13,7 @@ server.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-let spotifyApi = new SpotifyWebApi({
+/* let spotifyApi = new SpotifyWebApi({
   clientId: '63881124054e49d9a64b354c370d19cc',
   clientSecret: '2f160adb68b049d4953218e7c5d11005',
   redirectUri: 'https://testing-spotify-api.herokuapp.com/callback'
@@ -88,7 +88,7 @@ server.get('/albums', (req, res) => {
 
     }
   );
-})
+}) */
 
 
 
