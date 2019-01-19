@@ -21,7 +21,7 @@ let spotifyApi = new SpotifyWebApi({
 
 
 // The code that's returned as a query parameter to the redirect URI
-let code = 'AQBPt5hTYPQBjwtgjcnrkieU6ABXKrr9hnAlHsn5PiC7ua7GxLzqRd6AvC1dUZIYjfDF7tMjf9PJ2WbVZ-86p7b7Oet6QjoGEkdPFg5jCCvXn6AB9lDM6MXg0vAUBdg_q-ChJ52bNSZrgY9gPcvjoqwFTHjfMqHoWX04blmrpoXu30XE-kw30bT6k6IrluJi4QrClM-wBwZhrpcrL0RArY24hN_TIiV-g1V-x00sNAh4XQW4Y2pxjw2RYZ0Dj2ueG2ESmMrLdR5u1dfpI_g';
+let code = 'AQB4euuJhs-qDmOBb7csjlDeA_tP_osn1lSJCDJMNCNnL9PnKoZNWZFXJeCt3SSvl7GB8U3STWnZ0JtcrYpoP9xukCFmYrM41HGNn4OmCI22xxEZUkOPLFHmJ2pndrhwDJg4dd9Xwvm3NoEV11l7VV44_f5BlDuMy0ol7Baf1ym5E-lOL9TP6I5dgLO_3PLI5zkavj9_lxCAVjx08biGtkfploSpxL4u5J65znkqFVtokvLTMcO1i0mIv-zkaAd1B7HwqhoifRtUAS-mK10';
 
 // Retrieve an access token and a refresh token
 spotifyApi.authorizationCodeGrant(code).then(
