@@ -15,7 +15,7 @@ server.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-/* let spotifyApi = new SpotifyWebApi({
+let spotifyApi = new SpotifyWebApi({
   clientId: '63881124054e49d9a64b354c370d19cc',
   clientSecret: '2f160adb68b049d4953218e7c5d11005',
   redirectUri: 'https://testing-spotify-api.herokuapp.com/callback'
@@ -23,7 +23,7 @@ server.get('/', function(req, res) {
 
 
 // The code that's returned as a query parameter to the redirect URI
-let code = 'AQB4euuJhs-qDmOBb7csjlDeA_tP_osn1lSJCDJMNCNnL9PnKoZNWZFXJeCt3SSvl7GB8U3STWnZ0JtcrYpoP9xukCFmYrM41HGNn4OmCI22xxEZUkOPLFHmJ2pndrhwDJg4dd9Xwvm3NoEV11l7VV44_f5BlDuMy0ol7Baf1ym5E-lOL9TP6I5dgLO_3PLI5zkavj9_lxCAVjx08biGtkfploSpxL4u5J65znkqFVtokvLTMcO1i0mIv-zkaAd1B7HwqhoifRtUAS-mK10';
+let code = 'AQCfz1Etj9gH9ees3T1gyeh8Srn0eQlphHl85i0wKHtkEHjN1Wp25i2qfKKSOHjvToySwdeME5AAvj4mPX5atUmyDcJ3VQTmZZFGYN4HexPZFJtKuRk3Gyug5X8WPLDuRhqvrgcy9AhLQoHuHhaiqqCOo4GxS70JnB7QJ-xlX2wiauGamOi0IbcCJ3d7IFbPlCR4vv7HM8iGL6Kyt2Y5ODSI56Yagv8Aj3nrKsRuvmrFLW8ZaVB_qgwgPuareZIIFBG_dEOq6ShCnQfy8yw';
 
 // Retrieve an access token and a refresh token
 spotifyApi.authorizationCodeGrant(code).then(
@@ -61,7 +61,7 @@ function timer() {
       }
     );
 };
-setInterval(timer, 3600000);
+setInterval(timer, 3590000);
 
 
 // ############################################################ //
@@ -90,7 +90,7 @@ server.get('/albums', (req, res) => {
 
     }
   );
-}) */
+})
 
 
 
