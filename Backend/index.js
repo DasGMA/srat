@@ -8,15 +8,20 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 
-  let spotifyApi = new SpotifyWebApi({
-    clientId: '63881124054e49d9a64b354c370d19cc',
-    clientSecret: '2f160adb68b049d4953218e7c5d11005',
-    redirectUri: 'http://localhost:8888/callback'
-  });
+
+server.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+let spotifyApi = new SpotifyWebApi({
+  clientId: '63881124054e49d9a64b354c370d19cc',
+  clientSecret: '2f160adb68b049d4953218e7c5d11005',
+  redirectUri: 'https://testing-spotify-api.herokuapp.com/callback'
+});
 
 
 // The code that's returned as a query parameter to the redirect URI
-let code = 'AQD9skDF0GKS20zDMqPN40Urckn6CfbkD06dL7GgDI9ZuzCzBhgppjrdxxXcvu4x3_EghSMMTuQh7P_ZpR0KtTzKUIEV-XotUj_d5XAHSGZOXbhy26rEE4OFX8i053mEZNYFYMLXq0Bv6cjpFioApRulaUt6Ee7VqN_2EMWdmtgJ8EFpPxAN3teAdGV-6GgsrNqpYS7u6RKFyaLLOviWdTuk-DHbOY1nUgbCTNM34rwUP8ZpQs0NdTOm';
+let code = 'AQCk2_gS8QmePWK3wzUR-sEs3K-7-MS7k4XlaEFvAdQoIOmEYDAdmTCNVtqJIg01I7qJOlf_PhbM91SOzj4fQG4YLoXwyojwU_oJtOUExZi4__-LkWziVfUevAPni-rmWqCl9d2wsoyuS81GPwWQQUHlYBueq6boKBy3WSiqt3nPwk-FaJ-to8v8F-7mjVyGpL-1YabSTIpLZpCvi1jnxuH_2IN96-yvsGw2NYkLZ0J728K-ZSTNSVn1';
 
 // Retrieve an access token and a refresh token
 spotifyApi.authorizationCodeGrant(code).then(
@@ -34,6 +39,8 @@ spotifyApi.authorizationCodeGrant(code).then(
     console.log('Something went wrong!', err);
   }
 );
+
+
 
 function timer() {
   
@@ -55,6 +62,18 @@ function timer() {
 setInterval(timer, 3600000);
 
 
+// ############################################################ //
+// keeping heroku awake by sending a request to app every 29 minutes
+
+let http = require("http");
+function ping() {
+    http.get("https://testing-spotify-api.herokuapp.com/");
+};
+
+setInterval(ping, 1740000); // every 29 minutes
+
+// ############################################################ //
+
 server.get('/albums', (req, res) => {
   spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE').then(
     function(data) {
@@ -72,7 +91,11 @@ server.get('/albums', (req, res) => {
 })
 
 
-server.listen(8888, () => console.log('API running on port 8888'));
+
+
+server.listen(process.env.PORT || 8888, function(){
+  console.log('Your node js server is running');
+});
 
 
 // https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/top-tracks?country=US
